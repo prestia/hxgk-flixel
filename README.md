@@ -4,16 +4,16 @@ The options for integrating Game Center into HaxeFlixel projects are not great. 
 
 ##Instructions
 
-<pre>1.</pre> Install hxgk into a directory:
+* Install hxgk into a directory:
 ```git
 git clone git@github.com:prestia/hxgk-flixel.git DESTINATION-FOLDER
 ```
-<pre>2.</pre> Add the following to your Project.xml file:
+* Add the following to your Project.xml file:
 ```xml
 <include path="DESTINATION-FOLDER" if="ios" />
 <dependency name="GameKit.framework" if="ios"/>
 ```
-<pre>3.</pre> Remember to include `import hxgk.Hxgk;` in your .hx files!
+* Remember to include `import hxgk.Hxgk;` in your .hx files!
 
 ##To-Do
 
