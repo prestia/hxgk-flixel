@@ -1,0 +1,5 @@
+<project name="hxgk" url="http://www.milkmangames.com" license="MIT">
+    <user name="milkmangames"/>
+ <description>HxGK enables the use of iOS Game Center Leaderboard and Achievement features from within haXe when targeting iPhone/iPad/iPod Touch with the nekonme library.</description>
+    <version name="1.0.0">Initial Release</version>
+</project>

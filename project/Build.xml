@@ -1,0 +1,34 @@
+<xml>
+
+<set name="GCC_THIN_ARCHIVE" value="1"/>
+<set name="no_thirdparty_extras" value="1"/>
+<set name="tool" value="static_link"/>
+<set name="mobile" value="1"/>
+
+<set name="ndll-tool" value="static_link"/>
+<set name="name_extra" value=".iphoneos-v7" if="iphoneos"/>
+<set name="name_extra" value=".iphoneos" if="iphoneos" unless="HXCPP_ARMV7" />
+<set name="name_extra" value=".iphonesim" if="iphonesim"/><include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+<set name="SLIBEXT" value=".a"/>
+
+<files id="iphone">
+  <depend name="${HXCPP}/include/hx/Macros.h"/>
+  <depend name="${HXCPP}/include/hx/CFFI.h"/>
+  <compilerflag value="-Iinclude"/>
+  <file name="iPhone/Hxgk.mm"/>
+  <file name="iPhone/ExternalInterface.cpp"/>
+</files>
+
+<target id="NDLL" output="libhxgk${name_extra}" tool="linker" toolid="${ndll-tool}">
+  <outdir name="../ndll/${BINDIR}"/>
+  
+  <files id="iphone"/>
+  
+</target>
+
+<target id="default">
+   <target id="NDLL"/>
+</target>
+
+
+</xml>
