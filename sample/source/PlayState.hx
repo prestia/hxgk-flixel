@@ -27,33 +27,23 @@ class PlayState extends FlxState
 	 * Definitions
 	 */
 
-	/*
-	 * Leaderboard Category (You set this when setting up game Center in iTunes Connect)
-	 */
+	/* Leaderboard Category (You set this when setting up game Center in iTunes Connect) */
 	private static inline var LEADERBOARD_CATEGORY:String="1";
 
-	/*
-	 * Achievement Id
-	 */
+	/* Achievement Id */
 	private static inline var ACHIEVEMENT_ID:String="1_Tap";
 
 	/*
 	 * Instance Variables
 	 */
 
-	/*
-	 * Score Text
-	 */
+	/* Score Tex */
 	private var txtScore:FlxText;
 
-	/*
-	 * UI Offset
-	 */
+	/* UI Offset */
 	private var uiOffset:Float;
 
-	/*
-	 * Initial Auth Button
-	 */
+	/* Initial Auth Button */
 	private var btnAuth:FlxButton;
 
 	/**
@@ -95,9 +85,7 @@ class PlayState extends FlxState
 	 * Implementation
 	 */
 
-	/*
-	 * Create UI
-	 */
+	/* Create UI */
 	private function createUI():Void
 	{
 		txtScore=new FlxText(10, 10, 500, "SCORE: " + Reg.score);
@@ -112,9 +100,7 @@ class PlayState extends FlxState
 		addButton("Reset Achievements",onResetAchievements);
 	}
 
-	/*
-	 * Add Button
-	 */
+	/* Add Button */
 	private function addButton(label:String,cb:Void->Void):Void
 	{
 		var btn:FlxButton=new FlxButton(label,cb);
@@ -123,11 +109,11 @@ class PlayState extends FlxState
 		add(btn);
 	}
 
-	//
-	// Events
-	//
+	/*
+	 * Events
+	 */
 
-	/** On Auth Changed */
+	/* On Auth Changed */
 	private function onAuthChanged(authorized:Bool):Void
 	{
 		trace("AUTH STATE CHANGED: " + authorized);
@@ -138,44 +124,44 @@ class PlayState extends FlxState
 		}
 	}	
 
-	/** On Try Authorize */
+	/* On Try Authorize */
 	private function onTryAuthorize():Void
 	{
 		Hxgk.authenticateLocalUser(onAuthChanged);
 	}
 
-	/** On Increase Score */
+	/* On Increase Score */
 	private function onIncreaseScore():Void
 	{
 		Reg.score++;
 		txtScore.text="SCORE: "+ Reg.score;
 	}
 
-	/** On Show Achievements */
+	/* On Show Achievements */
 	private function onShowAchievements():Void
 	{
 		Hxgk.showAchievements();
 	}
 
-	/** On Show Leaderboard */
+	/* On Show Leaderboard */
 	private function onShowLeaderboard():Void
 	{
 		Hxgk.showLeaderboardForCategory(LEADERBOARD_CATEGORY);
 	}
 
-	/** On Submit Score */
+	/* On Submit Score */
 	private function onSubmitScore():Void
 	{
 		Hxgk.reportScoreForCategory(Reg.score,LEADERBOARD_CATEGORY);
 	}
 
-	/** On Win Achievement */
+	/* On Win Achievement */
 	private function onWinAchievement():Void
 	{
 		Hxgk.reportAchievement(ACHIEVEMENT_ID,100.0);
 	}
 
-	/** On Reset */
+	/* On Reset */
 	private function onResetAchievements():Void
 	{
 		Hxgk.resetAchievements();
