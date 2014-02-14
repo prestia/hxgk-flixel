@@ -38,13 +38,13 @@ class PlayState extends FlxState
 	 */
 
 	/* Score Tex */
-	private var txtScore:FlxText;
+	private var _txtScore:FlxText;
 
 	/* UI Offset */
-	private var uiOffset:Float;
+	private var _uiOffset:Float;
 
 	/* Initial Auth Button */
-	private var btnAuth:FlxButton;
+	private var _btnAuth:FlxButton;
 
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -59,8 +59,8 @@ class PlayState extends FlxState
 			trace("Game Center not available on this device.");
 			return;
 		}
-		btnAuth = new FlxButton( 20, FlxG.height - 60, "AUTHORIZE", onTryAuthorize );
-		add(btnAuth);
+		_btnAuth = new FlxButton( 20, FlxG.height - 60, "AUTHORIZE", onTryAuthorize );
+		add(_btnAuth);
 		super.create();
 	}
 	
@@ -88,10 +88,10 @@ class PlayState extends FlxState
 	/* Create UI */
 	private function createUI():Void
 	{
-		txtScore=new FlxText(10, 10, 500, "SCORE: " + Reg.score);
-		add(txtScore);
+		_txtScore=new FlxText(10, 10, 500, "SCORE: " + Reg.score);
+		add(_txtScore);
 		
-		uiOffset=txtScore.y+txtScore.height;
+		_uiOffset=_txtScore.y+_txtScore.height;
 		addButton("Increase Score",onIncreaseScore);
 		addButton("Submit Score",onSubmitScore);
 		addButton("Show Leaderboard",onShowLeaderboard);
@@ -104,8 +104,8 @@ class PlayState extends FlxState
 	private function addButton(label:String,cb:Void->Void):Void
 	{
 		var btn:FlxButton=new FlxButton(label,cb);
-		btn.y=uiOffset;
-		uiOffset+=(btn.height*1.5);
+		btn.y=_uiOffset;
+		_uiOffset+=(btn.height*1.5);
 		add(btn);
 	}
 
@@ -117,9 +117,9 @@ class PlayState extends FlxState
 	private function onAuthChanged(authorized:Bool):Void
 	{
 		trace("AUTH STATE CHANGED: " + authorized);
-		if (authorized && btnAuth != null)
+		if (authorized && _btnAuth != null)
 		{
-			FlxG.safeDestroy(btnAuth);
+			FlxG.safeDestroy(_btnAuth);
 			createUI();
 		}
 	}	
@@ -134,7 +134,7 @@ class PlayState extends FlxState
 	private function onIncreaseScore():Void
 	{
 		Reg.score++;
-		txtScore.text="SCORE: "+ Reg.score;
+		_txtScore.text="SCORE: "+ Reg.score;
 	}
 
 	/* On Show Achievements */
