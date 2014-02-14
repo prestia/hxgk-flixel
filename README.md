@@ -17,7 +17,7 @@ git clone git@github.com:prestia/hxgk-flixel.git DESTINATION-FOLDER
 
 ##To-Do
 
-This is a brand new library and not very well tested. It works on my project, but I'm eager for feedback from others. There is now a sample program in the repo, but I haven't had a chance to fully test it.
+This is a ~~brand new~~ hack of a seemingly abandoned extension and not very well tested. It works on my project, but I'm eager for feedback from others. There is now a sample program in the repo, but I haven't had a chance to fully test it.
 
 ##WARNING
 
