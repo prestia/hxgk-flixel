@@ -18,3 +18,7 @@ git clone git@github.com:prestia/hxgk-flixel.git DESTINATION-FOLDER
 ##To-Do
 
 This is a brand new library and not very well tested. It works on my project, but I'm eager for feedback from others. I'd also like to put together some sample projects to help people get up and running.
+
+##WARNING
+
+When testing Game Center apps, there is a bug with the sandboxed Game Center since iOS 7. You can read more about it [here](http://openradar.appspot.com/radar?id=5904850961301504). Essentially, if you hit "Cancel" at Game Center login 3 or more times, the device (hardware or simulated) will automatically cancel all future login requests. This is not a bug with hxgk-flixel. To fix this, you must wipe the device settings, which can be done through the settings app on iOS devices or "Reset Content and Settings..." in the iOS Simulator menu.
