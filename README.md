@@ -7,7 +7,7 @@ The options for integrating Game Center into HaxeFlixel projects are not great. 
 1. Install hxgk into a directory:
 
 ```
-git clone git@github.com:prestia/hxgk-flixel DESTINATION-FOLDER
+git clone git@github.com:prestia/hxgk-flixel.git DESTINATION-FOLDER
 ```
 
 2. Add the following to your Project.xml file:
