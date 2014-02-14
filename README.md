@@ -1,6 +1,6 @@
 #hxgk for HaxeFlixel
 
-The options for integrating Game Center into HaxeFlixel projects are not great. The original HxGK project seems to have largely disappeared from the Internet and NMEX, while full of great features, is an absolute pain to get running in its current state. This project should, hopefully, make simple Game Center integration (leaderboards and achievements) much simpler.
+The options for integrating Game Center into HaxeFlixel projects are not great. The original HxGK project seems to have largely disappeared from the Internet and NMEX, while full of great features, is an absolute pain to get running in its current state. This project should, hopefully, make basic Game Center integration (leaderboards and achievements) much simpler.
 
 ##Instructions
 
