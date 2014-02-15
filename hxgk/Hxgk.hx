@@ -101,8 +101,17 @@ class Hxgk
 	{
 		assertInit();
 		_onAuthCallback=onAuthCallback;
-		untyped hxgk_authenticate_local_user();		
+		untyped hxgk_authenticate_local_user();
 	}
+
+	/**
+	 * Checks to see if user is authenticated.
+	 */
+	public static function isUserAuthenticated():Bool
+	{
+		var authenticated:Bool=untyped hxgk_is_user_authenticated();
+		return authenticated;
+	}	
 
 	/**
 	 * Shows the standard iOS Achievements View.
@@ -206,5 +215,7 @@ class Hxgk
 	private static var hxgk_report_score_for_category=cpp.Lib.load("hxgk","report_score_for_category",2);
 	private static var hxgk_report_achievement=cpp.Lib.load("hxgk","report_achievement",2);
 	private static var hxgk_reset_achievements=cpp.Lib.load("hxgk","reset_achievements",0);
+
+	private static var hxgk_is_user_authenticated=cpp.Lib.load("hxgk","is_user_authenticated",0);
 	
 }
